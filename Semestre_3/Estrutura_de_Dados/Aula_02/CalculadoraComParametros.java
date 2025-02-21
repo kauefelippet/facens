@@ -72,6 +72,5 @@ public class CalculadoraComParametros {
                 JOptionPane.showMessageDialog(null, "Opção inválida!");
                 break;
         }
-
     }
 }
