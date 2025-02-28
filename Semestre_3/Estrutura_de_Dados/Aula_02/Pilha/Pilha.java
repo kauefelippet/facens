@@ -8,7 +8,7 @@ public class Pilha {
     public int tamanho;
     private Object[] vetor;
 
-    Pilha(int tam) {
+    public Pilha(int tam) {
         topo = -1; //Marca que a pilha está vazia
         tamanho = tam;
         vetor = new Object[tam];
