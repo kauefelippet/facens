@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form action="https://67d0b81d825945773eb1bced.mockapi.io/apilp/aluno" method="post">
+        <fieldset class="formulario">
+            <legend id="legenda">Cadastro de Aluno</legend>
+            <p>
+                <label for="nome">Aluno:</label>
+                <input type="text" class="campo" name="nome" required>
+            </p>
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" class="campo" name="email" required>
+            </p>
+            <p>
+                <label for="senha">Senha:</label>
+                <input type="password" class="campo" name="senha" required>
+            </p>
+            <p>
+                <label for="dt">Data de nascimento:</label>
+                <input type="date" class="campo" name="dt" required>
+            </p>
+            <p>
+                <label for="alt">Altura:</label>
+                <input type="number" class="campo" name="alt" min="0" max="3" step="0.01" required>
+            </p>
+            <p>
+                <label for="cor">Cor dos cabelos:</label>
+                <input type="color" class="campo" name="cor" required>
+            </p>
+            <p>
+                <label for="sexo">Sexo:</label>
+                <input type="radio" class="campo" name="sexo" value="M" required> Masculino
+                <input type="radio" class="campo" name="sexo" value="F" required> Feminino
+            </p>
+            <p>
+                <label for="gosto">Gosta de:</label>
+                <input type="checkbox" class="campo" name="gosto" value="Cinema"> Cinema
+                <input type="checkbox" class="campo" name="gosto" value="Esporte"> Esporte
+                <input type="checkbox" class="campo" name="gosto" value="Leitura"> Leitura
+            </p>
+            <p>
+                <label for="estado">Estado:</label>
+                <select name="estado" class="button" required>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="SC">Santa Catarina</option>
+            </p>
+            <p>
+                <label for="telefone">Telefone:</label>
+                <input type="text" class="campo" name="telefone" required>
+            </p>
+            <label for="up-rg" class="button" id="button-upload-rg">Upload RG</label>
+            <input type="file" name="up" id="up-rg">
+            <br>
+            <button type="submit" class="button">Registrar</button>
+            <button type="reset" class="button">Limpar</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
