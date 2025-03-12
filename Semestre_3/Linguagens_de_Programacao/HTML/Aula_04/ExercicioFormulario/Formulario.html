@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição</title>
+    <link rel="stylesheet" href="style.css">
+    <script> 
+    // Gerado por IA
+        async function buscarCEP() {
+            const cep = document.querySelector('input[name="cep"]').value;
+            if (cep) {
+                try {
+                    const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        document.querySelector('input[name="street"]').value = data.street;
+                        document.querySelector('input[name="neighborhood"]').value = data.neighborhood;
+                        document.querySelector('input[name="city"]').value = data.city;
+                        document.querySelector('select[name="state"]').value = data.state;
+                    } else {
+                        alert('CEP não encontrado.');
+                    }
+                } catch (error) {
+                    alert('Erro ao buscar CEP.');
+                }
+            } else {
+                alert('Por favor, insira um CEP.');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('buscar-cep').addEventListener('click', buscarCEP);
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const curso = urlParams.get('curso');
+            if (curso) {
+                document.querySelector('select[name="curso"]').value = curso;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Inscrição no Curso</h1>
+    <form action="" method="post">
+        <fieldset class="formulario">
+            <legend class="legenda">Dados do Aluno</legend>
+            <p>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" class="campo" name="nome" required>
+            </p>
+            <p>
+                <label for="cep">CEP:</label>
+                <input type="text" class="campo" name="cep" >
+                <button type="button" class="button" id="buscar-cep">Buscar</button>
+            </p>
+            <p>
+                <label for="street">Rua:</label>
+                <input type="text" class="campo" name="street" >
+            </p>
+            <p>
+                <label for="numero">Número da Residência:</label>
+                <input type="text" class="campo" name="numero" >
+            </p>
+            <p>
+                <label for="complement">Complemento:</label>
+                <input type="text" class="campo" name="complement" >
+            </p>
+            <p>
+                <label for="neighborhood">Bairro:</label>
+                <input type="text" class="campo" name="neighborhood" >
+            </p>
+            <p>
+                <label for="city">Cidade:</label>
+                <input type="text" class="campo" name="city" >
+            </p>
+            <p>
+                <label for="state">Estado:</label>
+                <select name="state" class="button">
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="AC">Acre</option>
+                    <option value="RR">Roraima</option>
+                    <option value="PA">Pará</option>
+                    <option value="AP">Amapá</option>
+                    <option value="TO">Tocantins</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="PI">Piauí</option>
+                    <option value="CE">Ceará</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="BA">Bahia</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="GO">Goiás</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="PR">Paraná</option>
+                    <option value="RS">Rio Grande do Sul</option>                    
+                </select>
+            </p>
+            <p>
+                <label for="dt">Data de Nascimento:</label>
+                <input type="date" class="campo" name="dt" required>
+            </p>
+            <p>
+                <label for="etnia">Etnia:</label>
+                <select name="etnia" class="button">
+                    <option value="branca">Branca</option>
+                    <option value="preta">Preta</option>
+                    <option value="parda">Parda</option>
+                    <option value="amarela">Amarela</option>
+                    <option value="indigena">Indígena</option>
+                </select>
+            </p>
+            <p>
+                <label for="telefone">Telefone:</label>
+                <input type="text" class="campo" name="telefone">
+            </p>
+            <p>
+                <label for="celular">Celular:</label>
+                <input type="text" class="campo" name="celular" required>
+            </p>
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" class="campo" name="email" required>
+            </p>
+            <button type="reset" class="button">Limpar</button>
+        </fieldset>
+
+        <fieldset class="formulario">
+            <legend class="legenda">Dados do Pai do Aluno</legend>
+            <p>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" class="campo" name="nome" required>
+            </p>
+            <p>
+                <label for="dt">Data de Nascimento:</label>
+                <input type="date" class="campo" name="dt">
+            </p>
+            <p>
+                <label for="naturalidade">Naturalidade:</label>
+                <input type="text" class="campo" name="naturalidade">
+            </p>
+            <p>
+                <label for="instrucao">Grau de Instrução:</label>
+                <select name="instrucao" class="button">
+                    <option value="fundamental">Fundamental</option>
+                    <option value="medio">Médio</option>
+                    <option value="superior">Superior</option>
+                    <option value="pos">Pós-graduação</option>
+                </select>
+            </p>
+            <p>
+                <label for="profissao">Profissão:</label>
+                <input type="text" class="campo" name="profissao">
+            </p>
+            <p>
+                <label for="celular">Celular:</label>
+                <input type="text" class="campo" name="celular" required>
+            </p>
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" class="campo" name="email" required>
+            </p>
+            <p>
+                <label for="cpf">CPF:</label>
+                <input type="text" class="campo" name="cpf">
+            </p>
+            <p>
+                <label for="responsavel-financeiro">É responsável financeiro:</label>
+                <input type="checkbox" class="campo" name="responsavel-financeiro" value="sim">
+            </p>
+            <button type="reset" class="button">Limpar</button>
+        </fieldset>
+
+        <fieldset class="formulario">
+            <legend class="legenda">Dados da Mãe do Aluno</legend>
+            <p>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" class="campo" name="nome" required>
+            </p>
+            <p>
+                <label for="dt">Data de Nascimento:</label>
+                <input type="date" class="campo" name="dt">
+            </p>
+            <p>
+                <label for="naturalidade">Naturalidade:</label>
+                <input type="text" class="campo" name="naturalidade">
+            </p>
+            <p>
+                <label for="instrucao">Grau de Instrução:</label>
+                <select name="instrucao" class="button">
+                    <option value="fundamental">Fundamental</option>
+                    <option value="medio">Médio</option>
+                    <option value="superior">Superior</option>
+                    <option value="pos">Pós-graduação</option>
+                </select>
+            </p>
+            <p>
+                <label for="profissao">Profissão:</label>
+                <input type="text" class="campo" name="profissao">
+            </p>
+            <p>
+                <label for="celular">Celular:</label>
+                <input type="text" class="campo" name="celular" required>
+            </p>
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" class="campo" name="email" required>
+            </p>
+            <p>
+                <label for="cpf">CPF:</label>
+                <input type="text" class="campo" name="cpf">
+            </p>
+            <p>
+                <label for="responsavel-financeiro">É responsável financeiro:</label>
+                <input type="checkbox" class="campo" name="responsavel-financeiro" value="sim">
+            </p>
+            <button type="reset" class="button">Limpar</button>
+        </fieldset>
+
+        <fieldset class="formulario">
+            <legend class="legenda">Dados do Curso</legend>
+            <p>
+                <label for="curso">Curso:</label>
+                <select name="curso" class="button">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="python">Python</option>
+                </select>
+            </p>
+            <p>
+                <label for="data-ingresso">Data de Ingresso:</label>
+                <input type="date" class="campo" name="data-ingresso">
+            </p>
+            <p>
+                <label for="parcelas">Parcelas:</label>
+                <input type="number" class="campo" name="parcelas" min="1" max="12">
+            </p>
+        </fieldset>
+
+        <button type="submit" class="button" id="submit-button">Inscrever-se</button>
+
+    </form>
+</body>
+</html>

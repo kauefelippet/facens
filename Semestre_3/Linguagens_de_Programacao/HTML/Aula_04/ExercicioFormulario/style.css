@@ -1,0 +1,64 @@
+body {
+    font-family: jetbrains mono;
+    background: linear-gradient(180deg, rgba(176,176,176,1) 0%, rgba(0,212,255,1) 100%);
+    color: rgb(0, 0, 0);
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0;
+}
+.campo {
+    background-color: rgb(207, 207, 207);
+    border: 0;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+p {
+    margin: 5px;
+    line-height: 27px;
+    text-align: justify;
+}
+.formulario {
+    background-color: rgb(175, 175, 175);
+    border: 2px rgb(0, 6, 94);
+    border-style: solid;
+    border-radius: 6px;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px;
+}
+.button {
+    font-family: JetBrains Mono;
+    text-align: center;
+    background-color: rgb(207, 207, 207);
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #24292E;
+    cursor: pointer;
+    display: inline-block;
+    padding-right: 4px;
+    padding-left: 4px;  
+}
+.button:hover {
+    background-color: rgb(190, 190, 190);
+    text-decoration: none;
+    transition-duration: 0.1s;
+}
+.footer {
+    font-size: 10px;
+    text-align: center;
+}
+a, .menu-anchor {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
