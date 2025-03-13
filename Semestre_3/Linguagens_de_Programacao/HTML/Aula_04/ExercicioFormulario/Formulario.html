@@ -43,7 +43,7 @@
 
 <body>
     <h1>Inscrição no Curso</h1>
-    <form action="" method="post">
+    <form action="https://67d0b81d825945773eb1bced.mockapi.io/apilp/Aluno" method="post">
         <fieldset class="formulario">
             <legend class="legenda">Dados do Aluno</legend>
             <p>
@@ -139,20 +139,20 @@
         <fieldset class="formulario">
             <legend class="legenda">Dados do Pai do Aluno</legend>
             <p>
-                <label for="nome">Nome Completo:</label>
-                <input type="text" class="campo" name="nome" required>
+                <label for="nome-pai">Nome Completo:</label>
+                <input type="text" class="campo" name="nome-pai" required>
             </p>
             <p>
-                <label for="dt">Data de Nascimento:</label>
-                <input type="date" class="campo" name="dt">
+                <label for="dt-pai">Data de Nascimento:</label>
+                <input type="date" class="campo" name="dt-pai">
             </p>
             <p>
-                <label for="naturalidade">Naturalidade:</label>
-                <input type="text" class="campo" name="naturalidade">
+                <label for="naturalidade-pai">Naturalidade:</label>
+                <input type="text" class="campo" name="naturalidade-pai">
             </p>
             <p>
-                <label for="instrucao">Grau de Instrução:</label>
-                <select name="instrucao" class="button">
+                <label for="instrucao-pai">Grau de Instrução:</label>
+                <select name="instrucao-pai" class="button">
                     <option value="fundamental">Fundamental</option>
                     <option value="medio">Médio</option>
                     <option value="superior">Superior</option>
@@ -160,24 +160,24 @@
                 </select>
             </p>
             <p>
-                <label for="profissao">Profissão:</label>
-                <input type="text" class="campo" name="profissao">
+                <label for="profissao-pai">Profissão:</label>
+                <input type="text" class="campo" name="profissao-pai">
             </p>
             <p>
-                <label for="celular">Celular:</label>
-                <input type="text" class="campo" name="celular" required>
+                <label for="celular-pai">Celular:</label>
+                <input type="text" class="campo" name="celular-pai" required>
             </p>
             <p>
-                <label for="email">E-mail:</label>
-                <input type="email" class="campo" name="email" required>
+                <label for="email-pai">E-mail:</label>
+                <input type="email" class="campo" name="email-pai" required>
             </p>
             <p>
-                <label for="cpf">CPF:</label>
-                <input type="text" class="campo" name="cpf">
+                <label for="cpf-pai">CPF:</label>
+                <input type="text" class="campo" name="cpf-pai" required>
             </p>
             <p>
-                <label for="responsavel-financeiro">É responsável financeiro:</label>
-                <input type="checkbox" class="campo" name="responsavel-financeiro" value="sim">
+                <label for="responsavel-financeiro-pai">É responsável financeiro:</label>
+                <input type="checkbox" class="campo" name="responsavel-financeiro-pai" value="sim">
             </p>
             <button type="reset" class="button">Limpar</button>
         </fieldset>
@@ -185,20 +185,20 @@
         <fieldset class="formulario">
             <legend class="legenda">Dados da Mãe do Aluno</legend>
             <p>
-                <label for="nome">Nome Completo:</label>
-                <input type="text" class="campo" name="nome" required>
+                <label for="nome-mae">Nome Completo:</label>
+                <input type="text" class="campo" name="nome-mae" required>
             </p>
             <p>
-                <label for="dt">Data de Nascimento:</label>
-                <input type="date" class="campo" name="dt">
+                <label for="dt-mae">Data de Nascimento:</label>
+                <input type="date" class="campo" name="dt-mae">
             </p>
             <p>
-                <label for="naturalidade">Naturalidade:</label>
-                <input type="text" class="campo" name="naturalidade">
+                <label for="naturalidade-mae">Naturalidade:</label>
+                <input type="text" class="campo" name="naturalidade-mae">
             </p>
             <p>
-                <label for="instrucao">Grau de Instrução:</label>
-                <select name="instrucao" class="button">
+                <label for="instrucao-mae">Grau de Instrução:</label>
+                <select name="instrucao-mae" class="button">
                     <option value="fundamental">Fundamental</option>
                     <option value="medio">Médio</option>
                     <option value="superior">Superior</option>
@@ -206,24 +206,24 @@
                 </select>
             </p>
             <p>
-                <label for="profissao">Profissão:</label>
-                <input type="text" class="campo" name="profissao">
+                <label for="profissao-mae">Profissão:</label>
+                <input type="text" class="campo" name="profissao-mae">
             </p>
             <p>
-                <label for="celular">Celular:</label>
-                <input type="text" class="campo" name="celular" required>
+                <label for="celular-mae">Celular:</label>
+                <input type="text" class="campo" name="celular-mae" required>
             </p>
             <p>
-                <label for="email">E-mail:</label>
-                <input type="email" class="campo" name="email" required>
+                <label for="email-mae">E-mail:</label>
+                <input type="email" class="campo" name="email-mae" required>
             </p>
             <p>
-                <label for="cpf">CPF:</label>
-                <input type="text" class="campo" name="cpf">
+                <label for="cpf-mae">CPF:</label>
+                <input type="text" class="campo" name="cpf-mae" required>
             </p>
             <p>
-                <label for="responsavel-financeiro">É responsável financeiro:</label>
-                <input type="checkbox" class="campo" name="responsavel-financeiro" value="sim">
+                <label for="responsavel-financeiro-mae">É responsável financeiro:</label>
+                <input type="checkbox" class="campo" name="responsavel-financeiro-mae" value="sim">
             </p>
             <button type="reset" class="button">Limpar</button>
         </fieldset>
@@ -232,7 +232,7 @@
             <legend class="legenda">Dados do Curso</legend>
             <p>
                 <label for="curso">Curso:</label>
-                <select name="curso" class="button">
+                <select name="curso" class="button" required>
                     <option value="html">HTML</option>
                     <option value="css">CSS</option>
                     <option value="javascript">JavaScript</option>
@@ -242,16 +242,19 @@
             </p>
             <p>
                 <label for="data-ingresso">Data de Ingresso:</label>
-                <input type="date" class="campo" name="data-ingresso">
+                <input type="date" class="campo" name="data-ingresso" required>
             </p>
             <p>
                 <label for="parcelas">Parcelas:</label>
-                <input type="number" class="campo" name="parcelas" min="1" max="12">
+                <input type="number" class="campo" name="parcelas" min="1" max="12" required>
             </p>
         </fieldset>
 
         <button type="submit" class="button" id="submit-button">Inscrever-se</button>
-
+        <br><br><br>
+        
+        <p class="footer">Atividade desenvolvida na disciplina de Linguagens de Programação no Centro Universitário Facens, no curso de Tecnologia em Análise e Desenvolvimento de Sistemas.</p>
+        <p class="footer">Kauê Felippe Tiburcio - RA 247721 - Prof. Edson Martin Feitosa</p>
     </form>
 </body>
 </html>
