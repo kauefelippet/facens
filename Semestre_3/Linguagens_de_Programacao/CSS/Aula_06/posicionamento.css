@@ -1,0 +1,56 @@
+html {
+    padding-bottom: 1000px;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #f4f4f4;
+}
+
+p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.static {
+    height: 100px;
+    background-color: #333;
+    border: 1px black solid
+}
+.relative {
+    position: relative;
+    height: 100px;
+    background-color: #c56464;
+    border: 1px black solid;
+    top: 20px;
+    left: 10px;
+}
+.absolute {
+    position: absolute;
+    height: 50px;
+    width: 70px;
+    background-color: #6664c5;
+    border: 1px black solid;
+    top: 20px;
+    right: 30px;
+}
+.fixed {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    background-color: #f13030;
+    border: 1px black solid;
+}
+.sticky {
+    position: sticky;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    border: 1px black solid;
+    top: 100px;
+    left: 150px;
+}
