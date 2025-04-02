@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexboxes</title>
+</head>
+<style>
+    * {
+        font-family: Century Gothic, sans-serif;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #dddcdc;
+    }
+    .container {
+        background-color: #ccc;
+        border: 1px solid #b8b8b8;
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        max-width: 1200px;
+    }
+    .item {
+        background-color: #4CAF50;
+        color: white;
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        flex-grow: 1; /* Allows items to grow and fill the space */
+    }
+    #item-6 {
+        flex-basis: 100%; /* Makes this item take the full width of the container */
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item" id="item-6">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+    
+</body>
+</html>

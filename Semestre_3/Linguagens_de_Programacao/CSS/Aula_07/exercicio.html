@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    * {
+        font-family: Century Gothic, sans-serif;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 95vh;
+        background-color: #a0a0a0;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-box {
+        width: 600px;
+        padding: 40px;
+        position: relative;
+        background-color: #bbb;
+        border-radius: 10px;
+    }
+    .user-icon {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+    }
+    h2 {
+        margin: 10px 0 10px 0;
+        text-align: center;
+    }
+    .textbox {
+        margin-bottom: 30px;
+    }
+    .textbox input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+    .btn {
+        width: 100%;
+        background-color: #9f7eec;
+        color: white; 
+        padding: 10px; 
+        border-radius: 5px; 
+        border: none; 
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <img src="./User-Icon.svg" alt="User-Icon" class="user-icon">
+            <h2>Login</h2>
+            <form>
+                <div class="textbox">
+                    <input type="text" placeholder="Usuário" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+        </div>
+    </div>
+</body>
+</html>
