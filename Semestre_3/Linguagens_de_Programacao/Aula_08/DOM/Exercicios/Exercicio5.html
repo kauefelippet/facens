@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        font-family: Century Gothic, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #cccccc;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    .word-counter {
+        text-align: center;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc; 
+        border-radius: 7px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #6f00ff;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 0.15vh;
+    }
+
+    button:hover {
+        background-color: #5e00e6;
+    }
+</style>
+<body>
+    <div class="word-counter">
+        <h1>Contador de Palavras</h1>
+        <textarea id="text" rows="10" cols="30" placeholder="Digite seu texto aqui"></textarea>
+        <button id="count-btn">Contar</button>
+        <p id="word-count">Número de palavras: 0</p>
+    </div>
+</body>
+<script>
+    const textArea = document.getElementById('text');
+    const countBtn = document.getElementById('count-btn');
+    const wordCountDisplay = document.getElementById('word-count');
+
+    countBtn.addEventListener('click', function () {
+        const text = textArea.value.trim();
+        let words = [];
+        if (text) {
+            words = text.split(' ').filter(word => word !== '');
+        }
+        const wordCount = words.length;
+        wordCountDisplay.textContent = `Número de palavras: ${wordCount}`;
+    });
+</script>
+</html>

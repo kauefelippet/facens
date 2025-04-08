@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<style>
+    * {
+        font-family: Century Gothic, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #dbdbdb;
+    }
+
+    .counter-button {
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffa600;
+        color: white;
+    }
+
+    button:hover {
+        background-color: #ff8c00;
+    }
+
+    button:active {
+        background-color: #ff7f00;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+</style>
+
+<body>
+    <div class="counter-button">
+        <button id="btn">Clique aqui</button>
+        <p id="counter">0</p>
+    </div>
+</body>
+
+<script>
+    let count = 0;
+    const btn = document.getElementById('btn');
+    const counterDisplay = document.getElementById('counter');
+
+    btn.addEventListener('click', function () {
+        count++;
+        counterDisplay.textContent = count;
+    });
+</script>
+
+</html>
