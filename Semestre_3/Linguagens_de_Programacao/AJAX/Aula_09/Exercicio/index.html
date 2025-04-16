@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas</title>
+</head>
+<!-- Em decorrência do problema de acesso aos arquivos pelo navegador, é necessário utilizar o projeto como um Web Server Local.
+     Para tal, podemos utilizar o comando "python -m http.server 8000", e acessá-lo pelo link http://localhost:8000/AJAX/Aula_09/Exercicio/index.html -->
+
+<body>
+    <div class="side-menu">
+        <h1>Atividade: Fetch</h1>
+        <ul>
+            <li><a href="../../../HTML/Aula_03/Exercicios/1.html">Tags HTML</a></li>
+            <li><a href="../../../CSS/Aula_05/Index.html">Fundamentos CSS</a></li>
+            <li><a href="../../../CSS/Aula_07/flexbox.html">Flexbox</a></li>
+            <li><a href="../../../DOM/Aula_08/Exercicios/Exercicio1.html">DOM</a></li>
+        </ul>
+    </div>
+    <div class="main-page">
+    </div>
+</body>
+<script>
+    const links = document.querySelectorAll('.side-menu a');
+    const mainPage = document.querySelector('.main-page');
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            const url = this.getAttribute('href');
+            
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    mainPage.innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching content:', error));
+        });
+    });
+</script>
+<style>
+    body {
+        display: flex;
+        font-family: Century Gothic, sans-serif;
+        background-color: #718f83;
+    }
+    .side-menu {
+        width: 17%;
+        height: 100%;
+        background-color: #527969;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+    .side-menu h1 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .side-menu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .side-menu li {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #3b5a4d;  
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .side-menu a {
+        text-decoration: none;
+        color: #1b1b1b;
+    }   
+    .main-page {
+        flex-grow: 1;
+        padding: 20px;
+        margin-left: 17%;
+    }
+</style>
+</html>
