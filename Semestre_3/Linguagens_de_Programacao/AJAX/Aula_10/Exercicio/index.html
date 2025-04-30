@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta do Clima via API</title>
+</head>
+<style>
+    body {
+        display: flex;
+        font-family: Century Gothic, sans-serif;
+        background-color: #718f83;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #container {
+        text-align: center;
+        background-color: #527969;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        border-radius: 5px;
+        border: none;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div id="container">
+        <h1>Consulta de Clima</h1>
+        <input type="text" id="cidade" placeholder="Digite o nome da cidade:">
+        <button id="buscar-clima" onclick="buscarClima()">Buscar Clima</button>
+    </div>
+</body>
+<script>
+    function buscarClima() {
+        const cidade = document.getElementById('cidade').value;
+
+        const container = document.getElementById('container');
+        Array.from(container.children).forEach(child => {
+            if (child.tagName === 'DIV') {
+                container.removeChild(child);
+            }
+        });
+
+        fetch(`https://wttr.in/${cidade}?format=3`)
+            .then(response => response.text())
+            .then(data => {
+                const climaDiv = document.createElement('div');
+                climaDiv.innerHTML = `<h2>Clima em ${cidade}:</h2><p>${data}</p>`;
+                container.appendChild(climaDiv);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar clima:', error);
+            });
+    }
+</script>
+</html>

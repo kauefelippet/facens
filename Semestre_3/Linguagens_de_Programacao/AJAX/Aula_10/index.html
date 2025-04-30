@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - AllPromise</title>
+</head>
+<body>
+    <select name="posts" id="posts"></select>
+</body>
+<script>
+    async function variosDados() {
+        const urls = [
+            'https://jsonplaceholder.typicode.com/posts',
+            'https://jsonplaceholder.typicode.com/comments',
+            'https://jsonplaceholder.typicode.com/albums'
+        ];
+        const responses = await Promise.all(urls.map(url => fetch(url)));
+        const data = await Promise.all(responses.map(response => response.json()));
+        const select = document.getElementById('posts');
+        data[0].forEach(post => {
+            const option = document.createElement('option');
+            option.value = post.id;
+            option.textContent = post.title;
+            select.appendChild(option);
+        });
+    }
+    variosDados();
+</script>
+</html>
