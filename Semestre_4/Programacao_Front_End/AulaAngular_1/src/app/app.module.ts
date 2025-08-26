@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MenuSuperiorComponent } from './menu-superior/menu-superior.component';
 import { DestaqueComponent } from './destaque/destaque.component';
 import { NoticiaComponent } from './noticia/noticia.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgbCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

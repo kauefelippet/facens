@@ -1,0 +1,6 @@
+.carousel-img {
+  aspect-ratio: 21 / 9;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
