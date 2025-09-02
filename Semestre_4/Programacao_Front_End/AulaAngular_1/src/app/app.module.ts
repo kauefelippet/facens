@@ -10,6 +10,10 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { HomeComponent } from './home/home.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TelaPaiComponent } from './tela-pai/tela-pai.component';
+import { TelaFilho1Component } from './tela-filho1/tela-filho1.component';
+import { TelaFilho2Component } from './tela-filho2/tela-filho2.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
     NoticiaComponent,
     ListaClientesComponent,
     HomeComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    PageNotFoundComponent,
+    TelaPaiComponent,
+    TelaFilho1Component,
+    TelaFilho2Component
   ],
   imports: [
     BrowserModule,
