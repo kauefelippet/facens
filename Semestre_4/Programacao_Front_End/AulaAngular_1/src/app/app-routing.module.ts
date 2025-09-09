@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TelaFilho1Component } from './tela-filho1/tela-filho1.component';
 import { TelaFilho2Component } from './tela-filho2/tela-filho2.component';
 import { TelaPaiComponent } from './tela-pai/tela-pai.component';
+import { NoticiaDetalheComponent } from './noticia-detalhe/noticia-detalhe.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: 'app-tela-filho1', component: TelaFilho1Component },
     { path: 'app-tela-filho2', component: TelaFilho2Component }
   ] },
+  { path: 'noticia-detalhe/:id', component: NoticiaDetalheComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
