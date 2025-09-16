@@ -1,0 +1,13 @@
+h2 {
+  font-weight: bold;
+}
+h4 {
+  font-weight: bold;
+}
+ p {
+  font-size: 1.3em;
+}
+label {
+  font-weight: bold;
+  color: var(--bs-primary);
+}

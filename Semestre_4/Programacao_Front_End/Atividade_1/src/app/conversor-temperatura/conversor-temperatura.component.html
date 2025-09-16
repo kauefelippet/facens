@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="p-4 border rounded shadow mt-5 text-center">
+    <h2 class="text-center mb-4">Conversor de Temperatura</h2>
+    <div class="mb-3">
+      <label class="form-label">Temperatura em Celsius:</label>
+      <input type="number" class="form-control text-center" [(ngModel)]="temperaturaCelsius" (ngModelChange)="converterTemperatura()" min="-273.15" step="0.01"/>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Temperatura em Fahrenheit:</label>
+      <p>{{temperaturaFahrenheit}}</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Temperatura em Kelvin:</label>
+      <p>{{temperaturaKelvin}}</p>
+    </div>
+  </div>
+</div>

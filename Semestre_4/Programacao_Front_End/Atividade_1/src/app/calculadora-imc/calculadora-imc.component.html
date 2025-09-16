@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center align-items-center">
+	<div class="p-4 border rounded shadow mt-5 text-center">
+		<h2 class="text-center mb-4">Calculadora de IMC</h2>
+		<form (ngSubmit)="calcularIMC()">
+			<div class="mb-3">
+				<label class="form-label">Peso (kg):</label>
+				<input type="number" class="form-control text-center" [(ngModel)]="peso" name="peso" min="0" step="0.01"/>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Altura (m):</label>
+				<input type="number" class="form-control text-center" [(ngModel)]="altura" name="altura" min="0" step="0.01"/>
+			</div>
+			<button type="submit" class="btn btn-primary">Calcular IMC</button>
+		</form>
+		<div class="mt-4">
+			<h4>Seu IMC: {{imc}}</h4>
+			<p>{{classificacao}}</p>
+		</div>
+	</div>
+</div>

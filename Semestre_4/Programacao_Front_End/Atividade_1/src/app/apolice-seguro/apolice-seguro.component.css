@@ -1,0 +1,7 @@
+h2 {
+  font-weight: bold;
+}
+label {
+  font-weight: bold;
+  color: var(--bs-primary);
+}
