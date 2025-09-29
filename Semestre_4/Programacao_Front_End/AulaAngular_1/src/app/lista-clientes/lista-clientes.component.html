@@ -27,15 +27,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>João Silva</td>
-          <td>(11) 91234-5678</td>
-          <td>
-            <button class="btn btn-sm btn-outline-secondary me-2">Editar</button>
-            <button class="btn btn-sm btn-outline-danger">Excluir</button>
-          </td>
-        </tr>
+        @for (let cliente of clientes; track cliente.id) {
+          <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.celular }}</td>
+            <td>
+              <button class="btn btn-sm btn-outline-secondary me-2">Editar</button>
+              <button class="btn btn-sm btn-outline-danger">Excluir</button>
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
   </div>
