@@ -79,8 +79,8 @@ body {
 // Assign different positions and animations for variety
 @for $i from 1 through 40 {
   .particle:nth-child(#{$i}) {
-    top: #{random(90)}vh;
-    left: #{random(90)}vw;
+    top: 10vh * $i;
+    left: 2vw * $i;
     // Alternate animations for first few particles
     @if $i % 4 == 1 {
       animation: float 20s infinite;
