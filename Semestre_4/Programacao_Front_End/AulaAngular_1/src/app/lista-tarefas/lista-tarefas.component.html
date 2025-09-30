@@ -1,0 +1,58 @@
+<div class="row mt-4 container border p-3 shadow rounded-4">
+  <div class="col-md-10">
+    <input class="form-control" [(ngModel)]="tarefaBuscada" type="text" placeholder="Pesquisar tarefa"
+      aria-label="tarefa-input">
+    @if (adicionandoTarefa) {
+    <div>
+      <input class="form-control mt-2" [(ngModel)]="novaTarefaDescricao" type="text" placeholder="Descrição da tarefa"
+        aria-label="nova-tarefa-input">
+    </div>
+    }
+  </div>
+  <div class="col-md-2">
+    <button type="button" class="btn btn-outline-primary" (click)="adicionandoTarefa = !adicionandoTarefa"
+      [ngClass]="{'btn-primary': isToggled, 'btn-outline-primary': !isToggled}" (click)="isToggled = !isToggled">
+      Nova Tarefa
+    </button>
+    @if (adicionandoTarefa) {
+    <div>
+      <button type="button" class="btn btn-outline-success mt-2" (click)="adicionarTarefa()">
+        Adicionar Tarefa
+      </button>
+    </div>
+    }
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Concluída</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (tarefa of tarefas; track tarefa.descricao) {
+          <tr>
+            <td
+              [ngStyle]="{'background-color': tarefaBuscada.length > 0 && tarefa.descricao.toLowerCase().startsWith(tarefaBuscada.toLowerCase()) ? 'lightblue' : 'transparent', 'text-decoration': tarefa.concluida ? 'line-through' : 'none'}">
+              {{ tarefa.descricao }}</td>
+            <td
+              [ngStyle]="{'background-color': tarefaBuscada.length > 0 && tarefa.descricao.toLowerCase().startsWith(tarefaBuscada.toLowerCase()) ? 'lightblue' : 'transparent'}">
+              <div class="form-check form-switch">
+                <input type="checkbox" [(ngModel)]="tarefa.concluida" class="form-check-input"
+                  style="transform: scale(1.3);" />
+              </div>
+            </td>
+            <td
+              [ngStyle]="{'background-color': tarefaBuscada.length > 0 && tarefa.descricao.toLowerCase().startsWith(tarefaBuscada.toLowerCase()) ? 'lightblue' : 'transparent'}">
+              <button class="btn btn-sm btn-outline-danger" (click)="excluirTarefa(tarefa)">Excluir</button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

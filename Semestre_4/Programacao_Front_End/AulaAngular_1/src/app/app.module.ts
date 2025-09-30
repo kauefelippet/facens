@@ -16,6 +16,7 @@ import { TelaFilho1Component } from './tela-filho1/tela-filho1.component';
 import { TelaFilho2Component } from './tela-filho2/tela-filho2.component';
 import { NoticiaDetalheComponent } from './noticia-detalhe/noticia-detalhe.component';
 import { FormsModule } from '@angular/forms';
+import { ListaTarefasComponent } from './lista-tarefas/lista-tarefas.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     TelaPaiComponent,
     TelaFilho1Component,
     TelaFilho2Component,
-    NoticiaDetalheComponent
+    NoticiaDetalheComponent,
+    ListaTarefasComponent
   ],
   imports: [
     BrowserModule,
