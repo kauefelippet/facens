@@ -1,0 +1,145 @@
+// Global styles for particle system
+$color: #595959;
+$easeSmooth: cubic-bezier(0.39, 0.575, 0.28, 0.995);
+
+// Base Styles
+body {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  overflow: hidden;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: white;
+  color: black;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  width: 600px;
+  max-width: 100%;
+  margin: 20px;
+  background: white;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: -10px 10px 67px -12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: apparition 0.8s 1.2s $easeSmooth forwards;
+
+  p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.1rem;
+    color: $color;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    border: 3px solid $color;
+    background: transparent;
+    font-size: 1rem;
+    color: $color;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+// Particle styles
+.particle {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #595959;
+  opacity: 0.3;
+  // Default animation for all particles
+  animation: float 20s infinite;
+}
+
+// Assign different positions and animations for variety
+@for $i from 1 through 40 {
+  .particle:nth-child(#{$i}) {
+    top: 10vh * $i;
+    left: 2vw * $i;
+    // Alternate animations for first few particles
+    @if $i % 4 == 1 {
+      animation: float 20s infinite;
+    }
+    @else if $i % 4 == 2 {
+      animation: floatReverse 18s infinite;
+    }
+    @else if $i % 4 == 3 {
+      animation: float2 22s infinite;
+    }
+    @else {
+      animation: floatReverse2 25s infinite;
+    }
+  }
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(180px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-180px);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(28px);
+  }
+}
+
+@keyframes floatReverse2 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-28px);
+  }
+}
