@@ -1,0 +1,31 @@
+/* Product card styles */
+.product-card {
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+	border: 1px solid #e9ecef;
+	border-radius: 6px;
+	background: #fff;
+	padding: 0.5rem;
+}
+.product-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.product-card .card-title {
+	font-weight: 600;
+	font-size: 1.05rem;
+}
+.product-card .card-subtitle {
+	font-size: 0.95rem;
+	color: #6c757d;
+}
+.product-card .card-text {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	line-clamp: 3;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+
+@media (max-width: 576px) {
+	.product-card .card-title { font-size: 1rem; }
+}

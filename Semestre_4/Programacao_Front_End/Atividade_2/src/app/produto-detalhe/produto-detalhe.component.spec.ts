@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TelaPaiComponent } from './tela-pai.component';
+import { ProdutoDetalheComponent } from './produto-detalhe.component';
 
-describe('TelaPaiComponent', () => {
-  let component: TelaPaiComponent;
-  let fixture: ComponentFixture<TelaPaiComponent>;
+describe('ProdutoDetalheComponent', () => {
+  let component: ProdutoDetalheComponent;
+  let fixture: ComponentFixture<ProdutoDetalheComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TelaPaiComponent]
+      declarations: [ProdutoDetalheComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TelaPaiComponent);
+    fixture = TestBed.createComponent(ProdutoDetalheComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
