@@ -1,1 +1,33 @@
-<p>tela-filho2 works!</p>
+<div class="container">
+  <h2>Cadastro de Clientes</h2>
+  <form #ngForm="ngForm" (ngSubmit)="submit(ngForm)">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" class="form-control" [(ngModel)]="cliente.nome" #nome="ngModel" required>
+    <div *ngIf="(ngForm.submitted || nome.touched) && nome.invalid" class="text-danger">
+      <span *ngIf="nome.errors?.['required']">Nome é obrigatório.</span>
+    </div>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" class="form-control" [(ngModel)]="cliente.email" #email="ngModel" required email>
+    <div *ngIf="(ngForm.submitted || email.touched) && email.invalid" class="text-danger">
+      <span *ngIf="email.errors?.['required']">Email é obrigatório.</span>
+      <span *ngIf="email.errors?.['email']">Email inválido.</span>
+    </div>
+    <br>
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" name="cidade" class="form-control" [(ngModel)]="cliente.cidade" #cidade="ngModel" required>
+    <div *ngIf="(ngForm.submitted || cidade.touched) && cidade.invalid" class="text-danger">
+      <span *ngIf="cidade.errors?.['required']">Cidade é obrigatória.</span>
+    </div>
+    <br>
+    <label for="celular">Celular:</label>
+    <input type="tel" id="celular" name="celular" class="form-control" [(ngModel)]="cliente.celular" #celular="ngModel" required pattern="[0-9]{10,11}">
+    <div *ngIf="(ngForm.submitted || celular.touched) && celular.invalid" class="text-danger">
+      <span *ngIf="celular.errors?.['required']">Celular é obrigatório.</span>
+      <span *ngIf="celular.errors?.['pattern']">Celular inválido.</span>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="ngForm.invalid">Enviar
+    </button>
+  </form>
+</div>

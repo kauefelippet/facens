@@ -36,7 +36,7 @@
         <tr (mouseover)="selecionarCliente(cliente)" (mouseout)="selecionarCliente(null)">
           <td>{{ cliente.id }}</td>
           <td
-            [ngStyle]="{'background-color': cliente.nome.toLowerCase() === nome.toLowerCase() ? 'lightblue' : 'transparent'}">
+            [ngStyle]="{'background-color': cliente.nome?.toLowerCase() === nome.toLowerCase() ? 'lightblue' : 'transparent'}">
             {{ cliente.nome }}</td>
           <td>{{ cliente.celular }}</td>
           <td [ngClass]="{'SaoPaulo': cliente.cidade === 'São Paulo'}">{{ cliente.cidade }}</td>
