@@ -42,7 +42,7 @@
             <td class="align-middle" [ngClass]="{'SaoPaulo': cliente.cidade === 'São Paulo'}">{{ cliente.cidade }}</td>
             <td class="align-middle">
               <button class="btn btn-sm btn-outline-secondary me-2">Editar</button>
-              <button class="btn btn-sm btn-outline-danger">Excluir</button>
+              <button class="btn btn-sm btn-outline-danger" (click)="excluirCliente(cliente.id)">Excluir</button>
             </td>
           </tr>
           }

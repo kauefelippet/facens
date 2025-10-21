@@ -34,4 +34,18 @@ export class ListaClientesComponent implements OnInit {
   selecionarCliente(cliente: Cliente | null) {
     this.clienteSelecionado = cliente;
   }
+
+  excluirCliente(id: number) {
+    if (confirm('Tem certeza que deseja excluir este cliente?')) {
+      this.clienteService.excluirCliente(id).subscribe({
+        next: () => {
+          alert('Cliente excluído com sucesso');
+          this.buscarClientes();
+        },
+        error: (err) => {
+          alert('Erro ao excluir cliente: ' + err);
+        }
+      });
+    }
+  }
 }

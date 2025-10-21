@@ -10,7 +10,7 @@ import { StorageService } from '../services/local-storage.service';
   styleUrl: './tela-filho1.component.css'
 })
 export class TelaFilho1Component implements OnInit {
-  cliente: Cliente = {};
+  cliente: Cliente = {id: 0};
 
   constructor(private storageService: StorageService) { }
 
