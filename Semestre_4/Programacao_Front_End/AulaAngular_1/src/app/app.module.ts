@@ -16,6 +16,7 @@ import { TelaFilho1Component } from './tela-filho1/tela-filho1.component';
 import { TelaFilho2Component } from './tela-filho2/tela-filho2.component';
 import { NoticiaDetalheComponent } from './noticia-detalhe/noticia-detalhe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { ListaTarefasComponent } from './lista-tarefas/lista-tarefas.component';
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ListaTarefasComponent } from './lista-tarefas/lista-tarefas.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     NgbCarouselModule
